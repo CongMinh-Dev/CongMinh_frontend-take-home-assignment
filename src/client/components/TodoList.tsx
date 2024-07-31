@@ -123,7 +123,7 @@ export const TodoList = () => {
         <Tabs.List className="TabsList" aria-label="Manage your account">
           {/* all button */}
           <Tabs.Trigger className="TabsTrigger" value="tab1">
-            <div className={`${isAll ? "bg-gray-700 text-white" : "border bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
+            <div className={`${isAll ? "bg-gray-700 text-white" : "border border-gray-200 bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
               onClick={() => {
                 setIsAll(true)
                 setIsPending(false)
@@ -136,7 +136,7 @@ export const TodoList = () => {
 
           {/* pending button */}
           <Tabs.Trigger className="TabsTrigger" value="tab2">
-            <div className={`${isPending ? "bg-gray-700 text-white" : "border bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
+            <div className={`${isPending ? "bg-gray-700 text-white" : "border border-gray-200 bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
               onClick={() => {
                 setIsAll(false)
                 setIsPending(true)
@@ -149,7 +149,7 @@ export const TodoList = () => {
 
           {/* completed button */}
           <Tabs.Trigger className="TabsTrigger" value="tab3">
-            <div className={`${isCompleted ? "bg-gray-700 text-white" : "border bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
+            <div className={`${isCompleted ? "bg-gray-700 text-white" : "border border-gray-200 bg-white"} rounded-full py-3 px-6 text-sm font-bold text-center mr-2 `}
               onClick={() => {
                 setIsAll(false)
                 setIsPending(false)
@@ -166,7 +166,7 @@ export const TodoList = () => {
       {isAll && <ul className="grid grid-cols-1 gap-y-3" ref={parent}>
         {todosAll.map((todo) => (
           <li key={todo.id}>
-            <div className="flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm ">
+            <div className={`${todo.status == "completed" && "bg-gray-50"} flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm`}>
               <button onClick={() => handleUpdateTodo(todo.id, todo.status)}>
 
                 <Checkbox.Root
@@ -203,7 +203,7 @@ export const TodoList = () => {
       {isPending && <ul className="grid grid-cols-1 gap-y-3" ref={parent}>
         {todosPending.map((todo) => (
           <li key={todo.id}>
-            <div className="flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm">
+            <div className={`${todo.status == "completed" && "bg-gray-50"} flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm`}>
               <button onClick={() => handleUpdateTodo(todo.id, todo.status)}>
 
                 <Checkbox.Root
@@ -240,7 +240,7 @@ export const TodoList = () => {
       {isCompleted && <ul className="grid grid-cols-1 gap-y-3" ref={parent}>
         {todosCompleted.map((todo) => (
           <li key={todo.id}>
-            <div className="flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm">
+            <div className={`${todo.status == "completed" && "bg-gray-50"} flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm`}>
               <button onClick={() => handleUpdateTodo(todo.id, todo.status)}>
 
                 <Checkbox.Root
