@@ -166,7 +166,7 @@ export const TodoList = () => {
       {isAll && <ul className="grid grid-cols-1 gap-y-3" ref={parent}>
         {todosAll.map((todo) => (
           <li key={todo.id}>
-            <div className="flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm">
+            <div className="flex items-center rounded-12 border border-gray-200 px-4 py-3 shadow-sm ">
               <button onClick={() => handleUpdateTodo(todo.id, todo.status)}>
 
                 <Checkbox.Root
@@ -181,7 +181,7 @@ export const TodoList = () => {
               </button>
 
               <label
-                className={`${todo.status == "completed" ? "line-through" : ""}  block pl-3 font-medium w-full text-base truncate`}
+                className={`${todo.status == "completed" ? "line-through" : ""}  block pl-3 font-medium w-full text-base truncate `}
                 htmlFor={String(todo.id)}>
                 {todo.body}
               </label>

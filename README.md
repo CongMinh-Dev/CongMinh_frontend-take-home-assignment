@@ -89,5 +89,5 @@ to the repo via email to `binhdv@thenowproject.com.vn` and
   - ✅ Finish Question 4
   - ✅ Finish Question 5
   - ✅ Finish Question 6
-  - ❌ Run `yarn lint` with no errors
+  - ✅ Run `yarn lint` with no errors
   - ✅ Run `yarn type-check` with no errors
